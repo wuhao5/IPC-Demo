@@ -20,4 +20,21 @@
     }
 }
 
+- (NSString *)fooClient:(ClientObject2 *)obj {
+  return [obj foo];
+}
+
+- (NSString *)getService {
+  ClientObject *obj = (id)[NSConnection rootProxyForConnectionWithRegisteredName:@"com.tekserve.IPCServ.TestService2" host:nil];
+  return [obj foo:[[ServiceObject2 alloc] init]];
+}
+@end
+
+@implementation ServiceObject2
+
+- (NSString *)foo {
+  ClientObject2 *obj = (id)[NSConnection rootProxyForConnectionWithRegisteredName:@"com.tekserve.IPCServ.TestService3" host:nil];
+  return [obj foo];
+}
+
 @end
