@@ -9,9 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "../IPCServ/ServiceObject.h"
 
-@implementation ClientObject
+@implementation ClientObject {
+  ServiceObject2 *_obj;
+}
+
 - (NSString *)foo:(ServiceObject2 *)obj {
+  _obj = obj;
   return [obj foo];
+}
+
+- (NSString *)foo {
+  return [_obj foo];
 }
 @end
 

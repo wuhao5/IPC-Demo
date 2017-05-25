@@ -27,6 +27,7 @@
 
 @interface ClientObject : NSObject
 - (NSString *)foo:(ServiceObject2 *)obj;
+- (NSString *)foo;
 @end
 
 @interface ClientObject2 : NSObject

@@ -26,7 +26,7 @@
 
 - (NSString *)getService {
   ClientObject *obj = (id)[NSConnection rootProxyForConnectionWithRegisteredName:@"com.tekserve.IPCServ.TestService2" host:nil];
-  return [obj foo:[[ServiceObject2 alloc] init]];
+  return [[obj foo:[[ServiceObject2 alloc] init]] stringByAppendingString:[obj foo]];
 }
 @end
 
